@@ -6,33 +6,8 @@ A virtual small-office network built with **pfSense CE** and **VirtualBox** to p
 
 ## Network topology
 
-```mermaid
-flowchart TB
-    subgraph WANNET["Simulated Internet: VirtualBox NAT Network LabWAN 10.0.2.0/24"]
-        EXT["External-Client<br/>VPN and port-forward tester"]
-    end
-
-    FW["pfSense-FW<br/>NAT, stateful firewall, DHCP, DNS, OpenVPN, Suricata IDS<br/>em0 WAN (DHCP) | em1 192.168.10.1 | em2 192.168.20.1 | em3 192.168.30.1"]
-
-    EXT -- "port forward TCP 8080, OpenVPN UDP 1194" --> FW
-
-    subgraph ADMIN["ADMIN LAN 192.168.10.0/24 (trusted)"]
-        AWS["Admin-WS<br/>Xubuntu, manages pfSense"]
-    end
-    subgraph GUEST["GUEST 192.168.20.0/24 (untrusted)"]
-        GC["Guest-Client<br/>isolation tests, nmap"]
-    end
-    subgraph DMZ["DMZ 192.168.30.0/24 (semi-exposed)"]
-        WEB["DMZ-Web01 .10<br/>nginx, SSH"]
-    end
-
-    FW --- AWS
-    FW --- GC
-    FW --- WEB
-```
-
-> A draw.io version is in [`diagrams/`](diagrams/) once exported (`topology.png` + `topology.drawio`).
-
+<img width="3200" height="2700" alt="topology" src="https://github.com/user-attachments/assets/f486504a-d00e-44d4-a508-25c408ad8892" />
+<br>
 ## Highlights
 
 - Three isolated zones: **Admin LAN, Guest and DMZ** (`192.168.10/20/30.0/24`), each on its own VirtualBox internal network
