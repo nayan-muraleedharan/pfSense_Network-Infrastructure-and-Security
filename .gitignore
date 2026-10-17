@@ -1,0 +1,21 @@
+# VM and installer files
+*.vdi
+*.vmdk
+*.ova
+*.iso
+*.vbox
+
+# Keys, certificates and VPN profiles
+*.ovpn
+*.key
+*.pem
+*.p12
+*.crt
+
+# Raw pfSense backups (a sanitised copy has a different name)
+config-*.xml
+*.bak
+
+# OS clutter
+.DS_Store
+Thumbs.db
