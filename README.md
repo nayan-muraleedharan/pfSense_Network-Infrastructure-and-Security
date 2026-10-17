@@ -101,7 +101,3 @@ Next: VLANs on a managed switch, central SIEM (Wazuh or Security Onion), automat
 ## Safety note
 
 No passwords, private keys, VPN profiles or unredacted configuration backups are included. All addresses are private lab addresses. The lab is isolated from any real network.
-
-## License
-
-[MIT](LICENSE)
